@@ -1,0 +1,75 @@
+creat table user(
+	userID VARCHAR(20) NOT NULL,
+	userEmail VARCHAR(50) NOT NULL,
+	username VARCHAR(20) NOT NULL,
+	password VARCHAR(20) NOT NULL,
+	interest INT,
+	firstName VARCHAR(20),
+	lastName VARCHAR(20),
+	PRIMARY KEY ( userID )
+);
+
+create table group(
+	groupID VARCHAR(20) NOT NULL,
+	isActive BOOL,
+	interest INT NOT NULL,
+	PRIMARY KEY (groupID)
+);
+
+create table event(
+	eventID VARCHAR(20) NOT NULL,
+	groupID VARCHAR(20) NOT NULL,
+	location VARCHAR(50) NOT NULL,
+	date DATE NOT NULL,
+	time TIME NOT NULL,
+	PRIMARY KEY (eventID),
+	FOREIGN KEY (groupID) REFERENCES group(groupID)
+);
+
+create table groupMembers(
+	userID VARCHAR(20) NOT NULL,
+	groupID VARCHAR(20) NOT NULL,
+	isAdmin BOOL,
+	PRIMARY KEY (userID, groupID),
+	FOREIGN KEY (userID) REFERENCES user(userID),
+	FOREIGN KEY (groupID) REFERENCES group(groupID)
+);
+
+create table eventAttend(
+	userID VARCHAR(20) NOT NULL,
+	eventID VARCHAR(20) NOT NULL,
+	PRIMARY KEY (userID, eventID),
+	FOREIGN KEY (userID) REFERENCES user(userID),
+	FOREIGN KEY (groupID) REFERENCES group(groupID)
+);
+
+create table images(
+	eventID VARCHAR(20) NOT NULL,
+	imagePath VARCHAR(50) NOT NULL,
+	PRIMARY KEY (imagePath),
+	FOREIGN KEY (eventID) REFERENCES event(eventID)
+);
+
+create table kickedFromGroup(
+	userID VARCHAR(20) NOT NULL,
+	groupID VARCHAR(20) NOT NULL,
+	PRIMARY KEY (userID, groupID),
+	FOREIGN KEY (userID) REFERENCES user(userID),
+	FOREIGN KEY (groupID) REFERENCES group(groupID)
+);
+
+create table bannedFromEvent(
+	userID VARCHAR(20) NOT NULL,
+	eventID VARCHAR(20) NOT NULL,
+	PRIMARY KEY (userID, eventID),
+	FOREIGN KEY (userID) REFERENCES user(userID),
+	FOREIGN KEY (eventID) REFERENCES event(eventID)
+);
+
+create table blockedUser(
+	blockerID VARCHAR(20) NOT NULL,
+	blockedID VARCHAR(20) NOT NULL,
+	PRIMARY KEY (blockerID, blockedID),
+	FOREIGN KEY (blockerID) REFERENCES user(userID),
+	FOREIGN KEY (blockedID) REFERENCES user(userID)
+);
