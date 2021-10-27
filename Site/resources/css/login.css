@@ -1,0 +1,103 @@
+body {
+    background-color: #162447;
+    font-family: Calibri;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
+}
+
+span {
+    font-size: 12px;
+}
+
+a {
+    color: #E43F5A;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+}
+
+.login-page {
+    margin: 0;
+    top: 120px;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+    background-color: #1F4068;
+    border-radius: 10px;
+    width: 400px;
+    height: 500px;
+    box-shadow: 1px 1px 10px;
+}
+
+.container {
+    padding-top: 50px;
+}
+
+.box h1 {
+    font-weight: bold;
+    font-size: 250%;
+    margin: 0;
+    color: aliceblue;
+}
+
+.box h3 {
+    font-weight: bold;
+    margin-top: 15px;
+    color: #1B1B2F;
+    margin-bottom: 50px;
+}
+
+.box input[type = 'text'], .box input[type = 'password'] {
+    display: block;
+    width: 320px;
+    padding: 14px 12px;
+    margin: 14px auto;
+    background-color: #294a72;
+    border: 0;
+    border-radius: 5px;
+    font-size: medium;
+    color: aliceblue;
+}
+
+.bt1 {
+    border: 0;
+    background: #E43F5A;
+    color: aliceblue;
+    border-radius: 60px;
+    margin-top: 30px;
+    width: 280px;
+    height: 50px;
+    font-size: large;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+a {
+    color:darkcyan;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.forpass {
+    position: relative;
+    top: 5px;
+    font-size: large;
+}
+
+.signup {
+    position: relative;
+    top: 10px;
+    font-size: medium;
+}
