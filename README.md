@@ -9,12 +9,11 @@ by Brendan College, Alejandro Fernandez, Charles Karlson, Samantha Maddox
 
 ## Table of Contents (Folders)
 **/Concept**: Website design concepts.  
+**/Documentation**: Project documentation.  
 **/core**: Core classes (User, Group, Event).  
-**/Deliverables 1**: Documents for Deliverables 1.  
-**/Deliverables 2**: Documents for Deliverables 2.  
 **/junk**: Junk and unrelated files.  
 **/libs**: Libraries.  
 **/main**: Main class.  
-**/passwordRecovery**: All files concerning password reset functionality.  
+**/password-recovery**: All files concerning password reset functionality.  
 **/query**: Database classes.  
 **/web**: Website files.  
