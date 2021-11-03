@@ -1,0 +1,27 @@
+Query.userByUsername(<username>)
+	-<username> is a object of class String 
+	-returns an integer value equal to the UserID of the user with the username <username>
+	-If User with a username of <username> does not exist throws UserNotFound exception
+		-Surround with a try/catch
+
+Query.userByUserID(<userID>)
+	-<userID> is a integer
+	-Returns an Object of class User that contains the information from the database
+	-If <userID> does not exist throws UserNotFound exception
+		-surround with try/catch
+
+Query.updateUser(<user>)
+	-<user> is an object of class User
+	-void function
+	-if <user>'s userID already Exists, the database will replace all the fields in the
+		database with the values in the class
+	-if <user>'s userID does not exist, throws UserNotFound exception
+		-surround with a try/catch
+
+Query.addUser(<user>)
+	-<user> is an object of class User
+	-Returns an Object of class User that is exactly the same as the input object except
+		for the userID which will now be updated to equal the one in the database
+	-if <user>'s username already exists, throws UserAlreadyExist exception
+		-surround with a try/catch
+
