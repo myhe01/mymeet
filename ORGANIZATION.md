@@ -2,7 +2,7 @@
 
 ### Folders
 * **Documentation, miscellaneous**: capitalize every letter  
-* **Classes, functional code**: pascal case  
+* **Classes, functional code**: kebab case  
 * **Libraries, other code**: kebab case  
 
 ### Files
