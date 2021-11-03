@@ -2,8 +2,19 @@
 by Brendan College, Alejandro Fernandez, Charles Karlson, Samantha Maddox  
 
 ## Table of Contents (Notable Files)
-READMEmd:         You are here.  
-ORGANIZATION.md:  File structure organization and naming conventions.  
-interests.lst     Standard list of interests  
+**/README.md**: You are here.  
+**/ORGANIZATION.md**: File structure organization and naming conventions.  
+**/INTERESTS.lst**: Standard list of interests  
+**/query/QUERY.md**: Database query calls and documentation.  
 
 ## Table of Contents (Folders)
+**/Concept**: Website design concepts.  
+**/core**: Core classes (User, Group, Event).  
+**/Deliverables 1**: Documents for Deliverables 1.  
+**/Deliverables 2**: Documents for Deliverables 2.  
+**/junk**: Junk and unrelated files.  
+**/libs**: Libraries.  
+**/main**: Main class.  
+**/passwordRecovery**: All files concerning password reset functionality.  
+**/query**: Database classes.  
+**/web**: Website files.  

@@ -1,15 +1,18 @@
 # File Structure Organizational Guidelines
 
 ### Folders
-* Documentation, miscellaneous: capitalize every letter  
-* Classes, libraries, other code: kebab case  
+* **Documentation, miscellaneous**: capitalize every letter  
+* **Classes, functional code**: pascal case  
+* **Libraries, other code**: kebab case  
 
 ### Files
-* Readme files:         uppercase snake case  
-* Java files:           pascal case  
-* Python files:         pascal case  
-* HTML and CSS files:   lowercase pascal case  
-* Miscellaneous files:  lowercase pascal case  
+* **Readme files**: uppercase snake case  
+* **List files**: uppercase snake case
+* **Java files**:  pascal case  
+* **Python files**: pascal case  
+* **HTML files**: lowercase pascal case
+* **CSS files**: lowercase pascal case  
+* **Miscellaneous files**: lowercase pascal case  
 
-### Miscellaneous
+### Notes
 * Stylized as myMeet  
