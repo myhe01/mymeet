@@ -7,7 +7,7 @@ File | Description
 /README.md  | You are here.  
 /ORGANIZATION.md | File structure organization and naming conventions.  
 /INTERESTS.lst | Standard list of interests  
-/query/QUERY.md | Database query calls and documentation.  
+/query/README.md | Database query calls and documentation.  
 
 ## Table of Contents (Folders)
 Directory | Description
