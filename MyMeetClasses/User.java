@@ -36,7 +36,7 @@ public class User {
     public String getUserID() {return userID; }
     public void setUserID(String userID) {this.userID = userID; }
     
-    public String[] getInterests(){ return interestsList; }
+    public String[] getInterests(){ return interestsList; }                         // FIXME: switch to ArrayLists? -Brendan
     public void setInterests(String... interestLists)
     {
         // TODO: Add functionality to setInterests
