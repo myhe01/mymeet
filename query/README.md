@@ -54,27 +54,38 @@ Void method. Removes relationship between *userID* and *groupID* in bannedFromGr
 
 ## TODO:
 
-`Query.createEvent`
+`Query.createEvent(Event event)`
+Returns an Object of class Event that is exactly the same as the input object except for the eventID, which will now be updated to equal the one in the database. No Errors thrown.
 
-`Query.eventByEventName`
+`Query.eventByEventName(String eventName)`
+Returns an arraylist of integers (can be size 1 or more) that contains all the eventID's that have a name that matches *eventName*.  If there are no events with that name, throws EventNotFound exception. (surround with try/catch)
 
-`Query.eventByEventID`
+`Query.eventByEventID(int eventID)`
+ Returns an Object of class Event that contains the information from the database. Throws EventNotFound exception if *eventID* does not exist (surround with try/catch).
 
-`Query.editEvent`
+`Query.editEvent(Event event, int userID)`
+Void Method.  Replaces the event in the database with eventID = *event.eventID* with all the information in the class passed to it. Throws EventNotFound exception if *event.eventID* doesn't exist. Throws NotCreator exception if *userID* is not the creator or doesn't exist. (surround with try/catch)
 
-`Query.cancelEvent`
+`Query.cancelEvent(int eventID, int userID)`
+Void Method. Delets the event.  Throws EventNotFound exception if the event doesn't exist.  Throws NotCreator exception if userID is not the event creator or doesn't exist.(surround with try/catch)
 
-`Query.joinEvent`
+`Query.joinEvent(int eventID, int userID)`
+Void Method. creates an joining event relationship between *userID* and *eventID*.  Throws EventNotFound exception if *eventID* doesn't exist.  Throws UserNotFound exception if *userID* doesn't exist.  Throws AlreadyJoined exception if the relationship already exists. (surround with try/catch)
 
 `Query.unjoinEvent`
+Void method. deletes a relationship join between *userID* and *eventID*. Throws EventNotFound exception if *eventID* doesn't exist.  Throws UserNotFound exception if *userID* doesn't exist.  Throws NotJoined exception if the relationship doesn't exist. (surround with try/catch)
 
-`Query.banUserFromEvent`
+`Query.banUserFromEvent(int creatorID, int userID, int eventID)`
+void method. Add relationship between *userID* and *eventID* in bannedFromEvent.  Throws NotCreator exception if *creatorID* is not the creator of *eventID* or of *creatorID* doesn't exist.  Throws UserNotFound exception if *userID* doesn't exist. Throws AlreadyBanned exception if relationship already exists. (surround with try/catch)
 
-`Query.unbanUserFromEvent`
+`Query.unbanUserFromEvent(int creatorID, int userID, int eventID)`
+void method. delete relationship between *userID* and *eventID* in bannedFromEvent.  Throws NotCreator exception if *creatorID* is not the creator of *eventID* or of *creatorID* doesn't exist.  Throws UserNotFound exception if *userID* doesn't exist. Throws NotBanned exception if relationship doesn't exist. (surround with try/catch)
 
-`Query.addImage`
+`Query.addImagePath(int eventID, String pathway)`
+void method.  changes the *eventID* image path to the *pathway*.  Throws EventNotFound exception if *eventID* doesn't exist. (surround with try/catch)
 
-`Query.removeImage`
+`Query.removeImagePath(int eventID)`
+void method. changes the *eventID* image path to NULL.  Throws EventNotFound exception if *eventID* doesn't exist. (surround with try/catch)
 
 `Query.countOfGroups()`
 Returns an integer value equal to the number of groups in the database.  no exceptions throwable
