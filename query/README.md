@@ -38,15 +38,21 @@ Void method. Creates new entry in groupMembers of relationship between *userID* 
 `Query.makeAdmin(int adminUserID, int userID, int groupID)`
 Void method. Updates the relationship between *userID* and *groupID* to be admin. Throws GroupNotFound exception if *groupID* does not exist. Throws NotAdmin exception if relationship in groupMembers *adminUserID* and *groupID* has isAdmin = false (or relationship doesn't exist, or *adminUserID* doesn't exist). Throws NotGroupMember exception if relationship in groupMembers *userID* and *groupID* doesn't exist (or *userID* doesn't exist) (surround with try/catch).
 
+`Query.stopAdmin(int userID, int groupID)`
+Void method. Updates the relationship between *userID* and *groupID* to be not admin iff they are not the last admin.  Throws GroupNotFound exception if *groupID* does not exist. Throws LastAdmin exception if there are no other admins for that group. Throws NotAdmin exception if relationship in groupMembers *UserID* and *groupID* has isAdmin = false. Throws NotGroupMember exception if relationship in groupMembers *userID* and *groupID* doesn't exist (or *userID* doesn't exist) (surround with try/catch).
+
+`Query.unjoinGroup(int userID, int groupID)`
+Void method.  Removes the realationship between *userID* and *groupID* in groupMembers. Throws GroupNotFound exception if *groupID* does not exist.  Throws UserNotFound exception if *userID* does not exist.  Throws NotGroupMember exception if the relationship doesn't exist.  Throws isAdmin exception if the relationship exists but the user is an Admin.
+
+`Query.banUserFromGroup(int adminUserID, int userID, int groupID)`
+Void method. Adds relationship between *userID* and *groupID* in bannedFromGroup. Throws GroupNotFound exception if *groupID* does not exist. Throws UserNotFound exception if *userID* doesn't exist.  Throws UserNotFound exception if *adminUserID* doesn't exist. Throws NotAdmin exception if relationship in groupMembers *adminUserID* and *groupID* has isAdmin = false (or relationship doesn't exist, or *adminUserID* doesn't exist). Throws alreadyBanned exception if relationship in bannedFromGroup *userID* and *groupID* exists (surround with try/catch).
+
+`Query.unbanUserFromGroup(int adminUserID, int userID, int groupID)`
+Void method. Removes relationship between *userID* and *groupID* in bannedFromGroup. Throws GroupNotFound exception if *groupID* does not exist. Throws UserNotFound exception if *userID* doesn't exist.  Throws UserNotFound exception if *adminUserID* doesn't exist. Throws NotAdmin exception if relationship in groupMembers *adminUserID* and *groupID* has isAdmin = false (or relationship doesn't exist, or *adminUserID* doesn't exist). Throws notBanned exception if relationship in bannedFromGroup *userID* and *groupID* doesn't exist (surround with try/catch).
+
+
+
 ## TODO:
-
-`Query.stopAdmin`
-
-`Query.unjoinGroup`
-
-`Query.banUserFromGroup`
-
-`Query.unbanUserFromGroup`
 
 `Query.createEvent`
 
@@ -69,3 +75,6 @@ Void method. Updates the relationship between *userID* and *groupID* to be admin
 `Query.addImage`
 
 `Query.removeImage`
+
+`Query.countOfGroups()`
+Returns an integer value equal to the number of groups in the database.  no exceptions throwable
