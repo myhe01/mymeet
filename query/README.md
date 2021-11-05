@@ -50,10 +50,6 @@ Void method. Adds relationship between *userID* and *groupID* in bannedFromGroup
 `Query.unbanUserFromGroup(int adminUserID, int userID, int groupID)`
 Void method. Removes relationship between *userID* and *groupID* in bannedFromGroup. Throws GroupNotFound exception if *groupID* does not exist. Throws UserNotFound exception if *userID* doesn't exist.  Throws UserNotFound exception if *adminUserID* doesn't exist. Throws NotAdmin exception if relationship in groupMembers *adminUserID* and *groupID* has isAdmin = false (or relationship doesn't exist, or *adminUserID* doesn't exist). Throws notBanned exception if relationship in bannedFromGroup *userID* and *groupID* doesn't exist (surround with try/catch).
 
-
-
-## TODO:
-
 `Query.createEvent(Event event)`
 Returns an Object of class Event that is exactly the same as the input object except for the eventID, which will now be updated to equal the one in the database. No Errors thrown.
 
