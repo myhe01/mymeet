@@ -13,7 +13,7 @@ create table user(
 	moviesAndTV BOOL,
 	music BOOL,
 	nature BOOL,
-	potography BOOL,
+	photography BOOL,
 	religion BOOL,
 	school BOOL,
 	sports BOOL,
@@ -24,7 +24,7 @@ create table user(
 	PRIMARY KEY ( userID )
 );
 
-create table group(
+create table meetGroup(
 	groupID INTEGER NOT NULL,
 	groupName VARCHAR(20) NOT NULL,
 	aeronautics BOOL,
@@ -37,7 +37,7 @@ create table group(
 	moviesAndTV BOOL,
 	music BOOL,
 	nature BOOL,
-	potography BOOL,
+	photography BOOL,
 	religion BOOL,
 	school BOOL,
 	sports BOOL,
@@ -57,7 +57,7 @@ create table event(
 	dateEnd DATE NOT NULL,
 	timeEnd TIME NOT NULL,
 	PRIMARY KEY (eventID),
-	FOREIGN KEY (groupID) REFERENCES group(groupID),
+	FOREIGN KEY (groupID) REFERENCES meetGroup(groupID),
 	FOREIGN KEY (creator) REFERENCES user(userID)
 );
 
@@ -67,7 +67,7 @@ create table groupMembers(
 	isAdmin BOOL,
 	PRIMARY KEY (userID, groupID),
 	FOREIGN KEY (userID) REFERENCES user(userID),
-	FOREIGN KEY (groupID) REFERENCES group(groupID)
+	FOREIGN KEY (groupID) REFERENCES meetGroup(groupID)
 );
 
 create table eventAttend(
@@ -75,7 +75,7 @@ create table eventAttend(
 	eventID INTEGER NOT NULL,
 	PRIMARY KEY (userID, eventID),
 	FOREIGN KEY (userID) REFERENCES user(userID),
-	FOREIGN KEY (groupID) REFERENCES group(groupID)
+	FOREIGN KEY (eventID) REFERENCES event(eventID)
 );
 
 create table images(
@@ -90,7 +90,7 @@ create table kickedFromGroup(
 	groupID INTEGER NOT NULL,
 	PRIMARY KEY (userID, groupID),
 	FOREIGN KEY (userID) REFERENCES user(userID),
-	FOREIGN KEY (groupID) REFERENCES group(groupID)
+	FOREIGN KEY (groupID) REFERENCES meetGroup(groupID)
 );
 
 create table bannedFromEvent(
