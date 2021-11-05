@@ -4,11 +4,11 @@ import java.util.*;
 public class Group {
     private String groupID;
     private boolean isActive;
-    private String[] interestsList;
+    private ArrayList<String> interestsList;
 
     public Group() {}
 
-    public Group(String groupID, boolean isActive, String[] interestsList)
+    public Group(String groupID, boolean isActive, ArrayList<String> interestsList)
     {
         this.setGroupID(groupID);
         this.setIsActive(isActive);
@@ -21,7 +21,7 @@ public class Group {
     public Boolean getIsActive() { return isActive; }
     public void setIsActive(boolean isActive) { this.isActive = isActive; }
 
-    public String[] getInterestsList() { return interestsList; }
+    public ArrayList<String> getInterestsList() { return interestsList; }
     public void setInterestsList(String... interestsList)
     {
         // TODO: Add functionality to setInterests
@@ -66,7 +66,7 @@ public class Group {
             return groups;
         }
 
-        interests = User.getInterests();            // FIXME: String/ArrayList incompat, assumed ArrayList
+        interests = User.getInterests();
         groups = new ArrayList<Groups>();
 
         // Try to query group and add to list, up to max number of groups, "skip" loop if a group isn't found
