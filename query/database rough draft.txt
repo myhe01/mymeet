@@ -3,7 +3,22 @@ create table user(
 	userEmail VARCHAR(50) NOT NULL,
 	username VARCHAR(20) NOT NULL,
 	password VARCHAR(20) NOT NULL,
-TODO	interests,
+	aeronautics BOOL,
+	anime BOOL,
+	art BOOL,
+	books BOOL,
+	cars BOOL,
+	history BOOL,
+	medical BOOL,
+	moviesAndTV BOOL,
+	music BOOL,
+	nature BOOL,
+	potography BOOL,
+	religion BOOL,
+	school BOOL,
+	sports BOOL,
+	technology BOOL,
+	videoGames BOOL,
 	firstName VARCHAR(20),
 	lastName VARCHAR(20),
 	PRIMARY KEY ( userID )
@@ -12,7 +27,22 @@ TODO	interests,
 create table group(
 	groupID INTEGER NOT NULL,
 	groupName VARCHAR(20) NOT NULL,
-TODO	interests
+	aeronautics BOOL,
+	anime BOOL,
+	art BOOL,
+	books BOOL,
+	cars BOOL,
+	history BOOL,
+	medical BOOL,
+	moviesAndTV BOOL,
+	music BOOL,
+	nature BOOL,
+	potography BOOL,
+	religion BOOL,
+	school BOOL,
+	sports BOOL,
+	technology BOOL,
+	videoGames BOOL,
 	PRIMARY KEY (groupID)
 );
 
@@ -73,5 +103,4 @@ create table bannedFromEvent(
 
 
 NOTES TO CHANGE:
-Remove blocked user table
-Figure out messages (either use facebook thing or text field in the database)
+possibly remove image handling
