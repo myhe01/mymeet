@@ -8,10 +8,11 @@ public class User {
     private String userEmail;
     private String password;
     private String userID;
-    private String[] interestsList;
+    private ArrayList<String> interestsList;
 
     public User(){};
-    public User(String firstName, String lastName, String userName, String userEmail, String password, String userID, String... interestsList)
+    // FIXME: ArrayList<String>
+    public User(String firstName, String lastName, String userName, String userEmail, String password, String userID, ArrayList<String> interestsList)
     {
         this.setFirstName(firstName);
         this.setLastName(lastName);
@@ -22,7 +23,7 @@ public class User {
         this.setInterests(interestsList);
     }
     
-    // Getter&&Setters
+    // Getters and Setters
     public String getFirstName() {return firstName; }
     public void setFirstName(String firstName) {this.firstName = firstName; }
     public String getLastName() {return lastName; }
@@ -35,12 +36,24 @@ public class User {
     public void setPassword(String password) {this.password = password; }
     public String getUserID() {return userID; }
     public void setUserID(String userID) {this.userID = userID; }
-    
-    public String[] getInterests(){ return interestsList; }                         // FIXME: switch to ArrayLists? -Brendan
-    public void setInterests(String... interestLists)
+    public ArrayList<String> getInterests(){ return interestsList; }
+    public void setInterests(ArrayList<String> interests)
     {
-        // TODO: Add functionality to setInterests
-    };
+        this.interestsList = new ArrayList<String>();
+
+        for (String s: interests) {
+            interestsList.add(s);
+        }
+    }
+
+    public void addInterest(String interest) {
+        if (interestsList == null) {
+            interestsList = new ArrayList<String>();
+        }
+
+        interestsList.add(interest);
+    }
+
 
    
 
