@@ -30,18 +30,4 @@ public class Event {
     public void setEventDate(String eventDate) { this.eventDate = eventDate; }
     public String getEventTime() {return eventTime; }
     public void setEventTime(String eventTime) {this.eventTime = eventTime; }
-
-    // CRUD
-    // TODO: add functionality between database and functions
-    public static void addEvent() {}
-    public static ArrayList<Event> retrieveAllEvents() { return new ArrayList<>(); }
-    public static ArrayList<Event> retrieveAllEventsByLocation() { return new ArrayList<>(); }
-    public static Event retrieveEvent() { return new Event(); }
-    public static void updatEventLocation() {}
-    public static void updatEventDate() {}
-    public static void updatEventTime() {}
-    public static void deleteEvent() {}
-    public static void clearEventData() {}
-    public static void createTestEvent() {}
-    public static void createTestEventByLocation() {}
 }
