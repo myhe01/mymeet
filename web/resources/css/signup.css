@@ -68,7 +68,8 @@ a {
     color: aliceblue;
 }
 
-.box input[type = 'text'], .box input[type = 'password'] {
+.box input[type = 'text'], .box input[type = 'password']
+, .box input[type = 'email'] {
     display: block;
     width: 360px;
     padding: 14px 12px;
