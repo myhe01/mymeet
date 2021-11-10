@@ -85,3 +85,9 @@ void method. changes the *eventID* image path to NULL.  Throws EventNotFound exc
 
 `Query.countOfGroups()`  
 Returns an integer value equal to the number of groups in the database.  no exceptions throwable
+
+`Query.getMessages(int groupID)`  
+Returns an object of class String of the messages for the group, if *groupID* doesn't exist, throws GroupNotFound exception
+
+`Query.updateMessages(int groupID, String messages)`  
+sets the messages column of *groupID* to the string of *messages*.  if *groupID* doesn't exist, throws GroupNotFound exception
