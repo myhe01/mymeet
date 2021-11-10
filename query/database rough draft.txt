@@ -43,7 +43,6 @@ create table meetGroup(
 	sports BOOL,
 	technology BOOL,
 	videoGames BOOL,
-	message LONGTEXT,
 	PRIMARY KEY (groupID)
 );
 
