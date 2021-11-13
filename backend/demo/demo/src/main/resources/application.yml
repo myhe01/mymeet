@@ -1,0 +1,18 @@
+server:
+  error:
+    include-message: always
+    include-binding-erros: always
+
+spring:
+  datasource:
+    password:
+    url:
+    username:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect:  org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
