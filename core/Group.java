@@ -3,8 +3,10 @@ import java.util.*;
 
 public class Group {
     private String groupID;
+    private String groupName;
     private boolean isActive;
     private ArrayList<String> interestsList;
+    private String message;
 
     public Group() {}
 
@@ -20,7 +22,11 @@ public class Group {
     public void setGroupID(String groupID) { this.groupID = groupID; }
     public Boolean getIsActive() { return isActive; }
     public void setIsActive(boolean isActive) { this.isActive = isActive; }
+    public String getGroupName() { return groupName; }
+    public void setGroupName(String groupName) { this.groupName = groupName; }
     public ArrayList<String> getInterestsList() { return interestsList; }
+    public String getMessage() { return message; }
+    public void setMessage() {this.message = message; }
     public void setInterestsList(ArrayList<String> interests) {
         this.interestsList = new ArrayList<String>();
 
