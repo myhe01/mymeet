@@ -42,7 +42,7 @@ ul {
     list-style-type: none;
 }
 
-li {
+.container {
     display: inline-flex;
     padding: 7px 9px;
     background: #E43F5A;
