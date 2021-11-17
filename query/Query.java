@@ -8,6 +8,12 @@ import com.mysql.jdbc.Driver;
 
 public class Query {
 	
+	public void isOnline() throws SQLException {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mymeet","root","Ennis-1998");
+		Statement stmt = con.createStatement();
+	}
+	
 	public int userByUsername(String username) throws ClassNotFoundException, SQLException, UserNotFound {
 		int userID;
 		Class.forName("com.mysql.jdbc.Driver");

@@ -1,9 +1,12 @@
-# Query Class Documentation
+/# Query Class Documentation
 This is stuff Charles is working on.  
 Interest.java is unfinished but can easily be finished as soon as the list of interests is complete. It will convert the database stored integer to and from an ArrayList.  
 database rough draft.txt is the COMPLETED draft of the MySQL input needed to create our database.
 
 ## Database Calls and Descriptions
+`Query.isOnline(void)`  
+Checks if database is accessible. Throws SQLException exception if unable to access (surround with try/catch).  
+
 `Query.userByUsername(String username)`  
 Returns an integer value equal to the *userID* of the user with the username *username*. Throws UserNotFound exception if a User with a username of *username* does not exist (surround with try/catch).  
 
