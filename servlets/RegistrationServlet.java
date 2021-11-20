@@ -6,10 +6,10 @@ import javax.servlet.http.*;
 
 
 @WebServlet(
-        name = "homepage",
-        urlPatterns = "/homepage/"
+        name = "registration",
+        urlPatterns = "/registration/"
 )
-public class homeServlet extends HttpServlet {
+public class RegistrationServlet extends HttpServlet {
 
     private String message;
     private static final long serialVersionUID = 1L;
@@ -22,6 +22,7 @@ public class homeServlet extends HttpServlet {
     // Required method to accept the GET request
     public void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
+
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         String userName = request.getParameter("userName");
