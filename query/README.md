@@ -5,7 +5,7 @@ database rough draft.txt is the COMPLETED draft of the MySQL input needed to cre
 
 ## Database Calls and Descriptions
 `Query.isOnline(void)`  
-Checks if database is accessible. Throws SQLException exception if unable to access (surround with try/catch).  
+Checks if database is accessible. Throws SQLException exception if unable to access and ClassNotFound exception if com.mysql.jdbc.Driver is not installed correctly (surround with try/catch) (in fact all of these methods will throw those exact same errors).
 
 `Query.userByUsername(String username)`  
 Returns an integer value equal to the *userID* of the user with the username *username*. Throws UserNotFound exception if a User with a username of *username* does not exist (surround with try/catch).  
