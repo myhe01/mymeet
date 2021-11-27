@@ -1,6 +1,7 @@
 // @Entity @Table(name = "Events")
 import java.util.*;
 
+
 public class Event {
     private String eventID;
     private String groupID;
