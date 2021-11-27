@@ -93,4 +93,25 @@ Returns an integer value equal to the number of groups in the database.  no exce
 Returns an object of class String of the messages for the group, if *groupID* doesn't exist, throws GroupNotFound exception
 
 `Query.updateMessages(int groupID, String messages)`  
-sets the messages column of *groupID* to the string of *messages*.  if *groupID* doesn't exist, throws GroupNotFound exception
+sets the messages column of *groupID* to the string of *messages*.  if *groupID* doesn't exist, throws GroupNotFound exception 
+
+`Query.allGroupsInUser(int userID)`  
+returns an ArrayList<Integer> that may be empty that contains all groupID's that userID belongs to, throws UserNotFound exception
+ 
+`Query.allEventsInUser(int userID)`  
+returns an ArrayList<Integer> that may be empty that contains all the eventID's userID is attending, throws UserNotFound exception
+ 
+`Query.allEventsInGroup(int groupID)`
+ returns an ArrayList<Integer> that may be empty that contains all the eventID's under groupID, throws GroupNotFound exception
+ 
+ `Query.allUsersInGroup(int groupID)`
+ returns an ArrayList<Integer> that may not be empty that contains all the userID's that bellong to the gorup, throws GroupNotFound exception
+ 
+ `Query.allAdminsInGroup(int groupID)`
+ returns an ArrayList<Integer> that may not be empty that contains all the userID's that are admins of GroupID, throws GroupNotFound exception
+ 
+ `Query.allUsersInEvent(int eventID)`
+ returns an ArrayList<Integer> that may be empty that contains all the userID's attending eventID, throws EventNotFound exception
+ 
+ `Query.eventCreator(int eventID)`
+ returns an int that is the userID of the creator of eventID, throws EventNotFound exception
