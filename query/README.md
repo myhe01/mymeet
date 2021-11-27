@@ -69,7 +69,7 @@ Void Method.  Replaces the event in the database with eventID = *event.eventID* 
 Void Method. Delets the event.  Throws EventNotFound exception if the event doesn't exist.  Throws NotCreator exception if userID is not the event creator or doesn't exist.(surround with try/catch)
 
 `Query.joinEvent(int eventID, int userID)`  
-Void Method. creates an joining event relationship between *userID* and *eventID*.  Throws EventNotFound exception if *eventID* doesn't exist.  Throws UserNotFound exception if *userID* doesn't exist.  Throws AlreadyJoined exception if the relationship already exists. (surround with try/catch)
+Void Method. creates an joining event relationship between *userID* and *eventID*.  Throws EventNotFound exception if *eventID* doesn't exist.  Throws UserNotFound exception if *userID* doesn't exist.  Throws AlreadyJoined exception if the relationship already exists. Throws AlreadyBanned exception if user is banned. (surround with try/catch)
 
 `Query.unjoinEvent(int eventID, int userID)`  
 Void method. deletes a relationship join between *userID* and *eventID*. Throws EventNotFound exception if *eventID* doesn't exist.  Throws UserNotFound exception if *userID* doesn't exist.  Throws NotJoined exception if the relationship doesn't exist. (surround with try/catch)
