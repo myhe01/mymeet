@@ -514,7 +514,7 @@ public class Query {
 		Class.forName("com.mysql.jdcb.Driver");
 		Connection con=DriverManager.getConnection(connectionAddress, connectionUsername, connectionPWord);
 		Statement stmt = con.createStatement();
-		ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM meetGroup");
+		ResultSet rs = stmt.executeQuery("SELECT MAX(groupID) FROM meetGroup");
 		rs.next();
 		int numGroups = rs.getInt(1);
 		return numGroups;
