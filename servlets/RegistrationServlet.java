@@ -9,7 +9,7 @@ import javax.servlet.http.*;
         name = "registration",
         urlPatterns = "/registration"
 )
-public class RegistrationServlet extends HttpServlet, Query {
+public class RegistrationServlet extends HttpServlet {
 
     private String message;
     private static final long serialVersionUID = 1L;
@@ -23,27 +23,9 @@ public class RegistrationServlet extends HttpServlet, Query {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
 
-//        response.setContentType("text/html");
-//        PrintWriter printWriter = response.getWriter();
-//        printWriter.print("<html>");
-//        printWriter.print("<body>");
-//        printWriter.print("<h1>Student Registration Form Data</h1>");
-//        printWriter.print("<p> firstName :: " + firstName + "</p>");
-//        printWriter.print("<p> lastName :: " + lastName + "</p>");
-//        printWriter.print("<p> userName :: " + userName + "</p>");
-//        printWriter.print("<p> userEmail :: " + userEmail + "</p>");
-//        printWriter.print("<p> password :: " + password + "</p>");
-//        printWriter.print("<body>");
-//        printWriter.print("<html>");
-//        printWriter.close();
-//
-//        System.out.println("firstname :: " + firstName);
-//        System.out.println("email :: " + userEmail);
-
     }
 
     // Required method to accept a POST request
-    //
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
