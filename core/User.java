@@ -37,7 +37,7 @@ public class User {
     public void setPassword(String password) {this.password = password; }
     public Integer getUserID() {return userID; }
     public void setUserID(Integer userID) {this.userID = userID; }
-    public ArrayList<String> getInterests(){ return interestsList; }
+    public ArrayList<String> getInterest(){ return interestsList; }
 
 
     public void setInterests(ArrayList<String> interests)
