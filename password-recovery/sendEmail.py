@@ -20,7 +20,7 @@ if __name__ == "__main__":
     body = open(sys.argv[3], "r")
 
 msg = MIMEMultipart('alternative')
-msg['Subject'] = "Test Subject"         #TODO: subject
+msg['Subject'] = "myMeet - Password Reset"
 msg['From'] = "dev.mymeet@gmail.com"
 msg['To'] = to
 msg.attach(MIMEText(body.read(), 'html'))
