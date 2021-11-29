@@ -1,0 +1,192 @@
+.logo {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 200%;
+    color: aliceblue;
+    font-weight: 900;
+}
+
+/* Create a box the size of half the screen vertically */
+.split {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+}
+  
+/* Control the left side */
+.left {
+    left: 0;
+}
+  
+/* Control the right side */
+.right {
+    right: 0;
+}
+
+#top_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 56%;
+}
+
+#banner_and_image {
+    position: absolute;
+    top: 50px;
+    left: 2%;
+    right: 2%;
+    bottom: 0;
+}
+
+#banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 25%;
+    border: 2px inset #1B1B2F;
+    box-shadow: 1px 1px 4px black;
+}
+
+#banner img {
+    width: 100%;
+    height: 100%;
+}
+
+/* If you want the content centered horizontally and vertically */
+#home_user_image {
+    position: absolute;
+    left: 5%;
+    bottom: 0;
+}
+
+/* Style the image inside the centered container, if needed */
+#home_user_image img {
+    width: 175px;
+    height: 175px;
+    border: 6px inset #1B1B2F;
+    border-radius: 50%;
+}
+
+#group_names {
+    position: absolute;
+    bottom: 45%;
+    top: 44%;
+    left: 6%;
+    right: 2%;
+}
+
+#group_names h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#group_names h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.vline {
+    border-left: 1px solid #E43F5A;
+    height: 94%;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 5%;
+}
+
+.home_info {
+    position: absolute;
+    top: 57%;
+    left: 6%;
+    right: 6%;
+    bottom: 1%;
+}
+
+.home_info h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.home_info ul {
+    list-style-type: none;
+    line-height: 150%;
+}
+
+.home_info li {
+    font-size: 130%;
+    color: #E43F5A;
+    font-weight: 600;
+    display: inline-block;
+    padding: 0px 15px;
+}
+
+.menu {
+    position: absolute;
+    left: 4%;
+    right: 4%;
+    top: 50px;
+    bottom: 50px;
+}
+
+.box {
+    position: absolute;
+    color: aliceblue;
+    width: 48%;
+    height: 47%;
+    border-radius: 4px;
+    box-shadow: 2px 2px 8px black;
+}
+
+.box h1 {
+    position: absolute;
+    margin-top: 0;
+    margin-bottom: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 350%;
+}
+
+.one {
+    top: 0;
+    left: 0;
+    background-color: #E43F5A;
+}
+
+.two {
+    top: 0;
+    right: 0;
+    background-color: #1B1B2F;
+}
+
+.three {
+    bottom: 0;
+    left: 0;
+    background-color: #1F4068;
+}
+
+.four {
+    bottom: 0;
+    right: 0;
+    background-color: #6B778D;
+}
+
+h1 {   
+    color: aliceblue;
+}
+
+h2 {   
+    color: aliceblue
+}
+
+h3 { 
+    color: #E43F5A
+}
+
+body {
+    background-color: #162447;
+    font-family: Calibri;
+}
