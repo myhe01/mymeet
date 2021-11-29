@@ -6,10 +6,10 @@ import javax.servlet.http.*;
 
 
 @WebServlet(
-        name = "passwordrecovery",
-        urlPatterns = "/passwordrecovery"
+        name = "searchevent",
+        urlPatterns = "/searchevent"
 )
-public class ForgotPasswordServlet extends HttpServlet {
+public class SearchEventServlet extends HttpServlet {
 
     private String message;
     private static final long serialVersionUID = 1L;
@@ -29,20 +29,15 @@ public class ForgotPasswordServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String userName = request.getParameter("userName");
-
-        try{
-            Integer userID = Query.userByUsername(userName);
-            User currentUser = Query.userByUserID(userID);
-            currentUser.password = request.getParameter("password");
-            
-            Query.updateUser(currentUser);
-        }
-        catch (Exception e)
+        Integer eventID = request.getParameter("eventID");
+        Event searchedEvent = null;
+        try {
+            searchedEvent = Query.eventByEventID(eventID);
+            // redirect to page of event.
+        } catch (Exception e)
         {
-            
+            e.printStackTrace();
         }
-
 
     }
     public void destroy() {

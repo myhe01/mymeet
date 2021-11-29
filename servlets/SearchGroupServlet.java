@@ -6,10 +6,10 @@ import javax.servlet.http.*;
 
 
 @WebServlet(
-        name = "passwordrecovery",
-        urlPatterns = "/passwordrecovery"
+        name = "searchgroup",
+        urlPatterns = "/searchgroup"
 )
-public class ForgotPasswordServlet extends HttpServlet {
+public class SearchGroupServlet extends HttpServlet {
 
     private String message;
     private static final long serialVersionUID = 1L;
@@ -29,20 +29,17 @@ public class ForgotPasswordServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String userName = request.getParameter("userName");
+        String groupName = request.getParameter("groupName");
+        Integer groupID = request.getParameter("groupID");
+        
+        try {
+            Group searchedGroupID = Query.groupByGroupID(groupID);
+            Integer searchedGroupNameID = Query.groupByGroupName(groupName);
 
-        try{
-            Integer userID = Query.userByUsername(userName);
-            User currentUser = Query.userByUserID(userID);
-            currentUser.password = request.getParameter("password");
-            
-            Query.updateUser(currentUser);
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
-            
+            e.printStackTrace();
         }
-
 
     }
     public void destroy() {
