@@ -4,7 +4,6 @@ import java.util.*;
 public class Group {
     private String groupID;
     private String groupName;
-    private boolean isActive;
     private ArrayList<String> interestsList;
     private String message;
 
@@ -20,8 +19,6 @@ public class Group {
     // Getters and setters
     public String getGroupID() {return groupID;}
     public void setGroupID(String groupID) {this.groupID = groupID;}
-    public Boolean getIsActive() {return isActive;}
-    public void setIsActive(boolean isActive) {this.isActive = isActive;}
     public String getGroupName() {return groupName;}
     public void setGroupName(String groupName) {this.groupName = groupName;}
     public ArrayList<String> getInterestsList() {return interestsList;}

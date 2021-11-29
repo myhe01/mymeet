@@ -43,7 +43,7 @@ public class UserPageServlet extends HttpServlet {
         String userID = request.getParameter("userID");
 
         try {
-            Query.userByUserID(Integer.parseInt(userID));
+            user = Query.userByUserID(Integer.parseInt(userID));
         } catch (Exception e) {
             // TODO: exception handling
         }

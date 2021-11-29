@@ -40,7 +40,8 @@ public class RegistrationServlet extends HttpServlet {
         try {
             Query.addUser(newUser);
         } catch (UserNotFound e){
-            e.printStackTrace;
+            response.setContentType("text/html");
+            PrintWriter printWriter = response.getWriter().println("<h1>User not found!</h1>");
         }
 
     }
