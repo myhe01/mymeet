@@ -87,7 +87,7 @@ public class Group {
         // "Skip" loop if a group isn't found
         for (i = 0; i < MAX_GROUPS; i++) {
             try {
-                groups.add(Query.groupByGroupID(rand.nextInt(numGroups)));
+                groups.add(Query.groupByGroupID(rand.nextInt(numGroups - 1)) + 1);
             }
             
             catch (GroupNotFound e) {
