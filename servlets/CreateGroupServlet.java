@@ -29,13 +29,6 @@ public class CreateGroupServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        /*
-        private int groupID;
-        private String groupName;
-        private ArrayList<String> interestsList;
-        private String message;
-        */
-
         String groupName = request.getParameter("groupName");
         Group newGroup = new Group();
         newGroup.setGroupName(groupName);
