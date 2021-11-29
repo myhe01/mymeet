@@ -9,7 +9,7 @@ h1 {
     color: #E43F5A;
     font-size: 50px;
     margin-top: 50px;
-    margin-bottom: 15px;
+    margin-bottom: 28px;
 }
 
 h2 {
@@ -20,10 +20,10 @@ h2 {
 }
 
 input[type = 'text'], input[type = 'number'] {
-    margin: 28px 0 24px;
+    margin: 16px;
     font-size: 16px;
-    height: 24px;
-    width: 180px;
+    height: 28px;
+    width: 260px;
     border-radius: 5px;
 }
 
@@ -37,7 +37,7 @@ input[type = 'submit'] {
 li {
     margin: 5px;
     list-style: none;
-    transform: translateX(-6%);
+    transform: translateX(-3%);
 }
 
 span {
@@ -56,7 +56,7 @@ a:hover {
     transition-duration: 0.2s;
 }
 
-.create-group-page {
+.create-event-page {
     position: absolute;
     left: 50%;
     text-align: center;
@@ -64,8 +64,8 @@ a:hover {
     top: 80px;
     background-color: #1e3162;
     border-radius: 10px;
-    width: 500px;
-    height: 960px;
+    width: 700px;
+    height: 780px;
     box-shadow: 1px 1px 10px;
 }
 
