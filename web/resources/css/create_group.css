@@ -37,7 +37,7 @@ input[type = 'submit'] {
 li {
     margin: 5px;
     list-style: none;
-    transform: translateX(-6%);
+    transform: translateX(-3%);
 }
 
 span {
@@ -64,7 +64,7 @@ a:hover {
     top: 80px;
     background-color: #1e3162;
     border-radius: 10px;
-    width: 500px;
+    width: 700px;
     height: 960px;
     box-shadow: 1px 1px 10px;
 }

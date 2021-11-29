@@ -29,7 +29,7 @@ input[type = 'submit'] {
 li {
     margin: 5px;
     list-style: none;
-    transform: translateX(-9%);
+    transform: translateX(-3%);
 }
 
 span {
@@ -59,8 +59,14 @@ h2 {
     left: 50%;
     text-align: center;
     transform: translateX(-50%);
+    top: 80px;
+    background-color: #1e3162;
+    border-radius: 10px;
+    width: 700px;
+    height: 1080px;
+    box-shadow: 1px 1px 10px;
 }
 
 .end {
-    margin-bottom: 160px;
+    margin-bottom: 240px;
 }
