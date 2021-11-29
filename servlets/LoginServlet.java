@@ -9,7 +9,7 @@ import javax.servlet.http.*;
         name = "login",
         urlPatterns = "/login"
 )
-public class RegistrationServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 
     private String message;
     private static final long serialVersionUID = 1L;
