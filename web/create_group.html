@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>create group</title>
+    <title>Create Group</title>
+    <link 
+        type= "text/css" rel="stylesheet"
+        href="./resources/css/create_group.css">
 </head>
 
 <body>
+    <div class="create-group-page">
+        <h1>Create a Group</h1>
     <form name="form1">
         <input type="text" name="group_name" placeholder="Group Name">
+        <h2>Select the group's interests:</h2>
         <ul>
             <label class="container">
                 <li>
@@ -92,7 +98,12 @@
                 </li>
             </label>
         </ul>
-        <input type="submit" value="save">
+        <input type="submit" value="Create">
     </form>
+
+    <a href=""><h3>Cancel</h3></a>
+    <div class="end"></div>
+
+    </div>
 </body>
 </html>
