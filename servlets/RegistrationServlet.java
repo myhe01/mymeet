@@ -36,7 +36,6 @@ public class RegistrationServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         User newUser = new User(firstName, lastName, userName, userEmail, password);
-        databaseConnect dbQuery = new databaseConnect();
 
         try {
             Query.addUser(newUser);
