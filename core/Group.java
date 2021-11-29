@@ -18,15 +18,16 @@ public class Group {
     }
 
     // Getters and setters
-    public String getGroupID() { return groupID; }
-    public void setGroupID(String groupID) { this.groupID = groupID; }
-    public Boolean getIsActive() { return isActive; }
-    public void setIsActive(boolean isActive) { this.isActive = isActive; }
-    public String getGroupName() { return groupName; }
-    public void setGroupName(String groupName) { this.groupName = groupName; }
-    public ArrayList<String> getInterestsList() { return interestsList; }
-    public String getMessage() { return message; }
+    public String getGroupID() {return groupID;}
+    public void setGroupID(String groupID) {this.groupID = groupID;}
+    public Boolean getIsActive() {return isActive;}
+    public void setIsActive(boolean isActive) {this.isActive = isActive;}
+    public String getGroupName() {return groupName;}
+    public void setGroupName(String groupName) {this.groupName = groupName;}
+    public ArrayList<String> getInterestsList() {return interestsList;}
+    public String getMessage() {return message;}
     public void setMessage() {this.message = message; }
+
     public void setInterestsList(ArrayList<String> interests) {
         this.interestsList = new ArrayList<String>();
 
@@ -42,19 +43,6 @@ public class Group {
 
         interestsList.add(interest);
     }
-
-
-
-    // CRUD
-    // TODO: add functionality between database and functions
-    public static void addGroup() {}
-    public static ArrayList<Group> retrieveAllGroups() { return new ArrayList<>(); }
-    public static Group retrieveGroup() { return new Group(); }
-    public static void updateGroupName() {}
-    public static void updateGroupInterests() {}
-    public static void deleteGroup() {}
-    public static void clearGroupData() {}
-    public static void createTestGroup() {}
 
     // Match groups to users:
     // Given a user ID, retrieve a number of random groups from the database and order their group IDs
@@ -91,7 +79,7 @@ public class Group {
         // Get the list of the user's interests, generate new ArrayLists
         userInterests = user.getInterests();
         groups = new ArrayList<Group>();
-        groupInterests = new ArrayList<String>[MAX_GROUPS];
+        groupInterests = new ArrayList<String>;
         groupWeight = new ArrayList<Integer>();
 
         // Try to query group and add to list, up to max number of groups
@@ -119,11 +107,6 @@ public class Group {
         // Increase weight by 1 if user interest matches any group interest
         // Iterate thru user interests
         for (i = 0; i < MAX_GROUPS; i++) {
-            /* TODO: remove
-            // Get size of group i's interest list
-            size = groups.get(i).getInterestsList().size();
-            */
-
             // Get group i's interest list
             groupInterests = groups.get(i).getInterestsList();
             groupWeight.add(0);
@@ -135,6 +118,21 @@ public class Group {
                 }
             }
         }
+
+        // Runs while there's still groups
+        while (!(groups.isEmpty())) {
+            for (i = NUM_INTERESTS; i >= 0; i--) {
+                for (j = 0; j < groups.size(); j++) {
+                    if (groupWeight.get(j) == i) {
+                        groupSorted.add(groups.get(j));
+                        groups.remove(j);
+                        groupWeight.remove(j);
+                    }
+                }  
+            }
+        }
+
+        return groupSorted;
 
         /* Weights explained:
         The group at groups[n] has its matching weight at groupWeight[n].
