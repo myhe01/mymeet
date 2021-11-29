@@ -2,28 +2,27 @@
 import java.util.*;
 
 public class Group {
-    private String groupID;
+    private int groupID;
     private String groupName;
     private ArrayList<String> interestsList;
     private String message;
 
     public Group() {}
 
-    public Group(String groupID, boolean isActive, ArrayList<String> interestsList)
+    public Group(String groupName, ArrayList<String> interestsList)
     {
-        this.setGroupID(groupID);
-        this.setIsActive(isActive);
-        this.setInterestsList(interestsList);
+        this.groupName = groupName;
+        this.interestsList = interestsList;
     }
 
     // Getters and setters
-    public String getGroupID() {return groupID;}
-    public void setGroupID(String groupID) {this.groupID = groupID;}
+    public int getGroupID() {return groupID;}
+    public void setGroupID(int groupID) {this.groupID = groupID;}
     public String getGroupName() {return groupName;}
     public void setGroupName(String groupName) {this.groupName = groupName;}
-    public ArrayList<String> getInterestsList() {return interestsList;}
+    public ArrayList<String> getInterest() {return interestsList;}
     public String getMessage() {return message;}
-    public void setMessage() {this.message = message; }
+    public void setMessage(String message) {this.message = message; }
 
     public void setInterestsList(ArrayList<String> interests) {
         this.interestsList = new ArrayList<String>();
@@ -44,7 +43,7 @@ public class Group {
     // Match groups to users:
     // Given a user ID, retrieve a number of random groups from the database and order their group IDs
     // most to least similar. Returns an ordered ArrayList of group IDs.
-    public ArrayList matchGroup(String userID) {
+    public ArrayList matchGroup(int userID) {
         final int MAX_GROUPS = 50;                  // Number of groups wanted queried from db
         final int NUM_INTERESTS = 16;               // Number of interests (TODO: replace with function that counts lines in INTERESTS.lst)
         Random rand = new Random();
@@ -53,13 +52,20 @@ public class Group {
         ArrayList<String> userInterests;            // List of user's interests
         ArrayList<Integer> groupWeight;             // Weight of groups
         ArrayList<Group> groupSorted = new ArrayList<Group>();
-        User user;
-        int i, j;
-        int numGroups = Query.countofGroups();      // Number of groups current in db
+        User user = new User();
+        int i, j, numGroups=-1;
+
+        try {
+                numGroups = Query.countOfGroups();      // Number of groups current in db
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
         int numInterests;                           // Number of interests from the user
 
         // No user ID or no groups
-        if (userID.isBlank() || (numGroups <= 0)) {
+        if (numGroups <= 0) {
             return groups;
         }
 
@@ -71,10 +77,12 @@ public class Group {
         // ID is invalid
         catch (UserNotFound e) {
             return groups;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         // Get the list of the user's interests, generate new ArrayLists
-        userInterests = user.getInterests();
+        userInterests = user.getInterest();
         groups = new ArrayList<Group>();
         groupInterests = new ArrayList<String>();
         groupWeight = new ArrayList<Integer>();
@@ -84,11 +92,13 @@ public class Group {
         // "Skip" loop if a group isn't found
         for (i = 0; i < MAX_GROUPS; i++) {
             try {
-                groups.add(Query.groupByGroupID(rand.nextInt(numGroups - 1)) + 1);
+                groups.add(Query.groupByGroupID(rand.nextInt(numGroups - 1) + 1));
             }
             
             catch (GroupNotFound e) {
                 i--;
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
 
@@ -105,7 +115,7 @@ public class Group {
         // Iterate thru user interests
         for (i = 0; i < MAX_GROUPS; i++) {
             // Get group i's interest list
-            groupInterests = groups.get(i).getInterestsList();
+            groupInterests = groups.get(i).getInterest();
             groupWeight.add(0);
 
             // Iterate through user's interest list to see if it matches any of group i's interests

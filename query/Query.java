@@ -285,7 +285,7 @@ public class Query {
 		if (group.getInterest().contains("school")) school=1;
 		if (group.getInterest().contains("technology")) technology=1;
 		if (group.getInterest().contains("videogames")) videogames=1;
-		stmt.executeUpdate("UPDATE meetGroup SET groupName='"+group.getGroupName()+"', aeronautics="+aeronautics.toString()+", anime="+anime.toString()+", art="+art.toString()+", books="+books.toString()+"cars="+cars.toString()+", history="+history.toString()+", medical="+medical.toString()+", moviesAndTV="+moviesAndTV.toString()+", music="+music.toString()+", nature="+nature.toString()+", photography="+photography.toString()+", religion="+religion.toString()+", school="+school.toString()+", technology="+technology.toString()+", videogames="+videogames.toString()+", message='"+group.getMessage()+"' WHERE groupID="+group.getID());
+		stmt.executeUpdate("UPDATE meetGroup SET groupName='"+group.getGroupName()+"', aeronautics="+aeronautics.toString()+", anime="+anime.toString()+", art="+art.toString()+", books="+books.toString()+"cars="+cars.toString()+", history="+history.toString()+", medical="+medical.toString()+", moviesAndTV="+moviesAndTV.toString()+", music="+music.toString()+", nature="+nature.toString()+", photography="+photography.toString()+", religion="+religion.toString()+", school="+school.toString()+", technology="+technology.toString()+", videogames="+videogames.toString()+", message='"+group.getMessage()+"' WHERE groupID="+group.getGroupID());
 		return;
 	}
 	

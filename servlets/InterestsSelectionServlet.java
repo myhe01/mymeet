@@ -37,7 +37,7 @@ public class InterestsSelectionServlet extends HttpServlet {
         {
             String interests[] = request.getParameterValues("chk_language");
 
-            for(int = 0; i < language.length; i++)
+            for(int i = 0; i < interests.length; i++)
             {
                 ArrayList<String> interestList = interests[i];
             }

@@ -3,10 +3,10 @@ import java.util.*;
 
 
 public class Event {
-    private String eventID;
+    private int eventID;
     private String eventName;
-    private String groupID;
-    private String creator;
+    private int groupID;
+    private int creator;
     private String location;
     private String date;
     private String time;
@@ -15,11 +15,11 @@ public class Event {
     
     public Event() {}
 
-    public String getEventID() {
+    public int getEventID() {
         return this.eventID;
     }
 
-    public void setEventID(String eventID) {
+    public void setEventID(int eventID) {
         this.eventID = eventID;
     }
 
@@ -31,19 +31,19 @@ public class Event {
         this.eventName = eventName;
     }
 
-    public String getGroupID() {
+    public int getGroupID() {
         return this.groupID;
     }
 
-    public void setGroupID(String groupID) {
+    public void setGroupID(int groupID) {
         this.groupID = groupID;
     }
 
-    public String getCreator() {
+    public int getCreator() {
         return this.creator;
     }
 
-    public void setCreator(String creator) {
+    public void setCreator(int creator) {
         this.creator = creator;
     }
 
