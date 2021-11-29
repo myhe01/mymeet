@@ -36,7 +36,7 @@ public class ForgotPasswordServlet extends HttpServlet {
             User currentUser = Query.userByUserID(userID);
             currentUser.password = request.getParameter("password");
             
-            Query.updateUser(User currentUser);
+            Query.updateUser(currentUser);
         }
         catch (Exception e)
         {
