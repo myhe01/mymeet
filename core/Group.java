@@ -79,7 +79,7 @@ public class Group {
         // Get the list of the user's interests, generate new ArrayLists
         userInterests = user.getInterests();
         groups = new ArrayList<Group>();
-        groupInterests = new ArrayList<String>;
+        groupInterests = new ArrayList<String>();
         groupWeight = new ArrayList<Integer>();
 
         // Try to query group and add to list, up to max number of groups
