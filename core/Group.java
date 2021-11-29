@@ -9,10 +9,10 @@ public class Group {
 
     public Group() {}
 
-    public Group(int groupID, ArrayList<String> interestsList)
+    public Group(String groupName, ArrayList<String> interestsList)
     {
-        this.setGroupID(groupID);
-        this.setInterestsList(interestsList);
+        this.groupName = groupName;
+        this.interestsList = interestsList;
     }
 
     // Getters and setters
