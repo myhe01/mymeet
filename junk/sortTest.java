@@ -106,25 +106,25 @@ public class sortTest {
             }
         }
 
+
         System.out.println("Group 1 Interests: " + groupTest1.getInterestsList());
         System.out.println("Group 2 Interests: " + groupTest2.getInterestsList());
         System.out.println("User Interests:    " + userTest.getInterests());
 
-        System.out.println("Weight for group 1: " + groupWeight.get(0));
-        System.out.println("Weight for group 2: " + groupWeight.get(1));
+        System.out.println("Weight for group 1: " + groupWeight.get(0) + " (" + groups.get(0) + ")");
+        System.out.println("Weight for group 2: " + groupWeight.get(1) + " (" + groups.get(1) + ")");
 
-        // TODO: fix
-        /*
-        // Goes by weight but concretely, not a sorting algoritm (kinda brute-force)
-        for (i = 0; i < MAX_GROUPS; i++) {
-            try {
-                if (groupWeight.get(i) == (MAX_GROUPS - i)) {
-                    groupSorted.add(groups.get(i));
-                }
-            }
-
-            catch (Exception e) {
-                System.out.println("@@ " + e);
+        // Runs while there's still groups
+        while (!(groups.isEmpty())) {
+            for (i = NUM_INTERESTS; i >= 0; i--) {
+                for (j = 0; j < groups.size(); j++) {
+                    if (groupWeight.get(j) == i) {
+                        System.out.println(">> Adding " + groups.get(j));
+                        groupSorted.add(groups.get(j));
+                        groups.remove(j);
+                        groupWeight.remove(j);
+                    }
+                }  
             }
         }
 
@@ -132,7 +132,6 @@ public class sortTest {
         System.out.println("groupSorted[0]: " + groupSorted.get(0).getInterestsList());
         System.out.println("groupSorted[1]: " + groupSorted.get(1).getInterestsList());
 
-        */
         // ----------------------------------------------------------------------------------------
     }
 }
