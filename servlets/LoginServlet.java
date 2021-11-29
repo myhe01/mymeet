@@ -6,10 +6,10 @@ import javax.servlet.http.*;
 
 
 @WebServlet(
-        name = "registration",
-        urlPatterns = "/registration"
+        name = "login",
+        urlPatterns = "/login"
 )
-public class RegistrationServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 
     private String message;
     private static final long serialVersionUID = 1L;
@@ -29,19 +29,27 @@ public class RegistrationServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String firstName = request.getParameter("firstName");
-        String lastName = request.getParameter("lastName");
         String userName = request.getParameter("userName");
-        String userEmail = request.getParameter("userEmail");
         String password = request.getParameter("password");
 
-        User newUser = new User(firstName, lastName, userName, userEmail, password);
-
+       
         try {
-            Query.addUser(newUser);
+            Integer userID = Query.userByUsername(userName);
+            User currentUser = Query.userByUserID(userID);
+
+            if (currentUser.getPassword().equals(password))
+            {
+                // TODO: login user in 
+            }
+            
+            else
+            {
+                // TODO: decline login attempt
+                // message: incorrect login
+            }
+
         } catch (UserNotFound e){
-            response.setContentType("text/html");
-            PrintWriter printWriter = response.getWriter().println("<h1>User not found!</h1>");
+            e.printStackTrace;
         }
 
     }

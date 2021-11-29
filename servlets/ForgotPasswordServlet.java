@@ -6,10 +6,10 @@ import javax.servlet.http.*;
 
 
 @WebServlet(
-        name = "registration",
-        urlPatterns = "/registration"
+        name = "passwordrecovery",
+        urlPatterns = "/passwordrecovery"
 )
-public class RegistrationServlet extends HttpServlet {
+public class ForgotPasswordServlet extends HttpServlet {
 
     private String message;
     private static final long serialVersionUID = 1L;
@@ -28,21 +28,21 @@ public class RegistrationServlet extends HttpServlet {
     // Required method to accept a POST request
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        String firstName = request.getParameter("firstName");
-        String lastName = request.getParameter("lastName");
+        
         String userName = request.getParameter("userName");
-        String userEmail = request.getParameter("userEmail");
-        String password = request.getParameter("password");
 
-        User newUser = new User(firstName, lastName, userName, userEmail, password);
-
-        try {
-            Query.addUser(newUser);
-        } catch (UserNotFound e){
-            response.setContentType("text/html");
-            PrintWriter printWriter = response.getWriter().println("<h1>User not found!</h1>");
+        try{
+            Integer userID = Query.userByUsername(userName);
+            User currentUser = Query.userByUserID(userID);
+            currentUser.password = request.getParameter("password");
+            
+            Query.updateUser(User currentUser);
         }
+        catch (Exception e)
+        {
+            
+        }
+
 
     }
     public void destroy() {

@@ -5,14 +5,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
 @WebServlet(
-    name = "user",
-    urlPatterns = "/user/"
+    name = "group",
+    urlPatterns = "/group/"
 )
 
-public class UserPageServlet extends HttpServlet {
+public class GroupPageServlet extends HttpServlet {
     private String message;
     private static final long serialVersionUID = 1L;
-    private User user;
+    private Group group = new Group();
 
     public void setMessage(String m) {
         this.message = m;
@@ -40,25 +40,25 @@ public class UserPageServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
         
-        String userID = request.getParameter("userID");
+        String groupID = request.getParameter("groupID");
 
         try {
-            user = Query.userByUserID(Integer.parseInt(userID));
+            group = Query.groupByGroupID(Integer.parseInt(groupID));
         } catch (Exception e) {
-            // TODO: exception handling
+            e.printStackTrace();
         }
         
         response.setContentType("text/plain");
         PrintWriter printWriter = response.getWriter();
 
-        printWriter.println(user.getFirstName());
-        printWriter.println(user.getLastName());
-        printWriter.println(user.getUserName());
+        printWriter.println(group.getGroupName());
         
-        ArrayList<String> interests = user.getInterests();
+        ArrayList<String> interests = group.getInterestsList();
         for (String s: interests) {
             printWriter.println(s);
         }
+
+        printWriter.println(group.getMessage());
 
         printWriter.close();
     }
