@@ -9,10 +9,9 @@ public class Group {
 
     public Group() {}
 
-    public Group(String groupID, boolean isActive, ArrayList<String> interestsList)
+    public Group(String groupID, ArrayList<String> interestsList)
     {
         this.setGroupID(groupID);
-        this.setIsActive(isActive);
         this.setInterestsList(interestsList);
     }
 
