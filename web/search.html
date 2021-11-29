@@ -4,12 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>create group</title>
+    <title>search</title>
 </head>
 
 <body>
+    <h1>Search Users</h1>
     <form name="form1">
-        <input type="text" name="group_name" placeholder="Group Name">
+        <input type="text" name="userName" placeholder="user name">
+        <input type="submit" value="search by user name">
+    </form>
+    <form name="form2">
+        <input type="number" name="userID" placeholder="User ID">
+        <input type="submit" value="search by user ID">
+    </form>
+
+    <h1>Search Groups</h1>
+    <form name="form3">
+        <input type="text" name="groupName" placeholder="group name">
+        <input type="submit" value="search by group name">
+    </form>
+    <form name="form4">
+        <input type="number" name="groupID" placeholder="group ID">
+        <input type="submit" value="search by group ID">
+    </form>
+    <form name="form5">
         <ul>
             <label class="container">
                 <li>
@@ -92,7 +110,14 @@
                 </li>
             </label>
         </ul>
-        <input type="submit" value="save">
+        <input type="submit" value="Search by Interest">
     </form>
+
+    <h2>Search Events</h2>
+    <form>
+        <input type="number" name="eventID" placeholder="event ID">
+        <input type="submit" value="Search by Event ID">
+    </form>
+
 </body>
 </html>
