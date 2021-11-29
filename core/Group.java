@@ -4,24 +4,20 @@ import java.util.*;
 public class Group {
     private int groupID;
     private String groupName;
-    private boolean isActive;
     private ArrayList<String> interestsList;
     private String message;
 
     public Group() {}
 
-    public Group(int groupID, boolean isActive, ArrayList<String> interestsList)
+    public Group(int groupID, ArrayList<String> interestsList)
     {
         this.setGroupID(groupID);
-        this.setIsActive(isActive);
         this.setInterestsList(interestsList);
     }
 
     // Getters and setters
     public int getGroupID() {return groupID;}
     public void setGroupID(int groupID) {this.groupID = groupID;}
-    public Boolean getIsActive() {return isActive;}
-    public void setIsActive(boolean isActive) {this.isActive = isActive;}
     public String getGroupName() {return groupName;}
     public void setGroupName(String groupName) {this.groupName = groupName;}
     public ArrayList<String> getInterest() {return interestsList;}
@@ -58,12 +54,14 @@ public class Group {
         ArrayList<Group> groupSorted = new ArrayList<Group>();
         User user = new User();
         int i, j, numGroups=-1;
-	try {
-            numGroups = Query.countOfGroups();      // Number of groups current in db
-	}
-	catch (Exception e) {
-	    e.printStackTrace();
-	}
+
+        try {
+                numGroups = Query.countOfGroups();      // Number of groups current in db
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
         int numInterests;                           // Number of interests from the user
 
         // No user ID or no groups
@@ -79,10 +77,9 @@ public class Group {
         // ID is invalid
         catch (UserNotFound e) {
             return groups;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-	catch (Exception e) {
-	    e.printStackTrace();
-	}
 
         // Get the list of the user's interests, generate new ArrayLists
         userInterests = user.getInterest();
@@ -100,10 +97,9 @@ public class Group {
             
             catch (GroupNotFound e) {
                 i--;
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-	    catch (Exception e) {
-		e.printStackTrace();
-	    }
         }
 
         // Get number of user interests
