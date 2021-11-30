@@ -14,24 +14,24 @@
     <div class="event-page">
         <h1>Event Name here</h1>
         <h2>Event creator here</h2>
-
-        <div class="event-info">
-            <h2>Event information</h2>
-            <ul>
-                <li>Location</li>
-                <li>start date/time</li>
-                <li>end date/time</li>
-            </ul>
-            <h2>Event Attendees</h2>
-            <ul>
-                <li>event attendees here</li>
-            </ul>
-            <h2>Images</h2>
-            <ul>
-                <li>images here</li>
-            </ul>
-        </div>
-        
+        <h3>Event Attendees</h3>
+        <ul>
+            <li>event attendees here</li>
+        </ul>
+        <h3>Images</h3>
+        <form method="post" action="multiPartServlet" enctype="multipart/form-data">
+            Choose a file: <input type="file" name="multiPartServlet" />
+            <input type="submit" value="Upload" />
+        </form>
+        <ul>
+            <li>images here</li>
+        </ul>
+        <h3>Event information</h3>
+        <ul>
+            <li>Location</li>
+            <li>start date/time</li>
+            <li>end date/time</li>
+        </ul>
     </div>
 
 </body>
