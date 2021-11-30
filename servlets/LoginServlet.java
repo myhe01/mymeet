@@ -49,7 +49,7 @@ public class LoginServlet extends HttpServlet {
             }
 
         } catch (UserNotFound e){
-            e.printStackTrace;
+            e.printStackTrace();
         }
 
     }
