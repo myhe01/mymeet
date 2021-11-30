@@ -53,8 +53,9 @@ public class CreateGroupServlet extends HttpServlet {
             PrintWriter printWriter = response.getWriter().println("<h1>Group not found!</h1>");
         }
 
+        // redirect
     }
-    
+
     public void destroy() {
 
     }
