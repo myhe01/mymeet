@@ -44,6 +44,9 @@ public class InterestsSelectionServlet extends HttpServlet {
 
             User currentUser = Query.userByUserID("userID");
             currentUser.setInterests(interestList);
+
+            // hopefully redirects
+            request.getRequestDispatcher("UserPage.jsp").forward(request, response);
         }
 
     }

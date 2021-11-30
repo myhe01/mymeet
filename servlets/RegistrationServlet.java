@@ -38,7 +38,11 @@ public class RegistrationServlet extends HttpServlet {
         User newUser = new User(firstName, lastName, userName, userEmail, password);
 
         try {
-            Query.addUser(newUser);
+            newUser = Query.addUser(newUser);
+            Integer newUserID = newUser.getId();
+
+            request.setAttribute("userID", "newUserID");
+            request.getRequestDispatcher("UserPage.jsp").forward(request, response);
         } catch (UserNotFound e){
             response.setContentType("text/html");
             PrintWriter printWriter = response.getWriter().println("<h1>User not found!</h1>");
