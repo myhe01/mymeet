@@ -35,6 +35,8 @@ public class RegistrationServlet extends HttpServlet {
         String userEmail = request.getParameter("userEmail");
         String password = request.getParameter("password");
 
+        response.setContentType("text/html");
+        PrintWriter printWriter = response.getWriter().println("<h1>im in doPost!</h1>");
         User newUser = new User(firstName, lastName, userName, userEmail, password);
 
         try {
