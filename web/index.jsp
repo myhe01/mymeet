@@ -57,12 +57,23 @@
                     <%<ArrayList<int> groups=Query.allGroupsInUser(userID);
                     String s = "";
                     for (int i = 0; i < groups.length(); i++) {
-                        s=s+"<li>"+groups.get(i).getGroupID()+" "+groups.get(i).getGroupName()+"</li>";
+                        s=s+"<li>"+groups.get(i)+" "+Query.groupByGroupID(groups.get(i)).getGroupName()+"</li>";
                     }
                     %>
                     <%=s%>
                 </ul>
                 <br>
+
+                <h1>Events</h1>
+                <ul>
+                    <%ArrayList<int> events=Query.allEventsInUser(userID);
+                    String s = "";
+                    for (int i = 0; i < events.length(); i++) {
+                        s=s+"<li>"+events.get(i)+" "+Query.eventByEventID(event.get(i))+"</li>";
+                    }
+                    %>
+                    <%=s%>
+                </ul>
 
             </div>
         </div>
