@@ -48,8 +48,8 @@ public class LoginServlet extends HttpServlet {
                 // message: incorrect login
             }
 
-        } catch (UserNotFound e){
-            e.printStackTrace;
+        } catch (Exception e){
+            e.printStackTrace();
         }
 
     }

@@ -4,13 +4,13 @@
 
 import java.util.*;
 import java.sql.*;
-import com.mysql.jdbc.Driver;
+// import com.mysql.jdbc.Driver;
 
 public class Query {
 	
 	final static private String connectionAddress = "jdbc:mysql://localhost:3306/mymeet";
 	final static private String connectionUsername = "root";
-	final static private String connectionPWord = "Ennis-1998";
+	final static private String connectionPWord = "root";
 	
 	static public void isOnline() throws SQLException, ClassNotFoundException{
 		Class.forName("com.mysql.jdbc.Driver");

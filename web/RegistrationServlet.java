@@ -35,19 +35,24 @@ public class RegistrationServlet extends HttpServlet {
         String userEmail = request.getParameter("userEmail");
         String password = request.getParameter("password");
 
-        User newUser = new User(firstName, lastName, userName, userEmail, password);
+        User newUser = new User();
+        newUser.setFirstName(firstName); 
+        newUser.setLastName(lastName);
+        newUser.setUserName(userName);
+        newUser.setUserEmail(userEmail);
+        newUser.setPassword(password);
 
         try {
             newUser = Query.addUser(newUser);
-            Integer newUserID = newUser.getId();
+            Integer newUserID = newUser.getUserID();
 
             request.setAttribute("userID", "newUserID");
             request.getRequestDispatcher("UserPage.jsp").forward(request, response);
-        } catch (UserNotFound e){
+        } catch (Exception e){
             response.setContentType("text/html");
-            PrintWriter printWriter = response.getWriter().println("<h1>User not found!</h1>");
+            response.getWriter().println("<h1>User not found!</h1>");
         }
-
+        
     }
     public void destroy() {
 
