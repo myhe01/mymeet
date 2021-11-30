@@ -45,6 +45,8 @@ public class Settings extends HttpServlet {
             
         try {
             Query.deleteUser(user.getUserID());
+
+            request.getRequestDispatcher("Login.jsp").forward(request, response);
         } catch (UserNotFound e) {
             e.printStackTrace();
         }

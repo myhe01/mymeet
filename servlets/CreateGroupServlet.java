@@ -47,7 +47,13 @@ public class CreateGroupServlet extends HttpServlet {
         }
 
         try {
-            Query.addGroup(newGroup);
+            newGroup = Query.createGroup(newGroup);
+
+            Integer newGroupID = newGroup.getGroupId();
+
+            // hopefully redirects correctly
+            request.setAttribute("groupID","newGroupID");
+            request.getRequestDispatcher("GroupPage.jsp").forward(request, response);
         } catch (UserNotFound e){
             response.setContentType("text/html");
             PrintWriter printWriter = response.getWriter().println("<h1>Group not found!</h1>");
