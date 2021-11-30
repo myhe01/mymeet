@@ -1,0 +1,108 @@
+body {
+    background-color: #162447;
+    font-family: Calibri;
+    color: aliceblue;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    margin: 24px 0px 6px 40px;
+}
+
+h2 {
+    margin: 8px 0px 8px 40px;
+}
+
+.logo {
+    position: fixed;
+    margin: 0px;
+    top: 4px;
+    right: 30px;
+}
+
+.logo span {
+    margin: 0px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.group-page {
+    position: absolute;
+    top: 64px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1240px;
+    height: 800px;
+    background-color: #1e3162;
+    box-shadow: 0px 0px 8px black;
+    border-radius: 8px;
+}
+
+.vline {
+    border-left: 1px solid #E43F5A;
+    height: 98%;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 10px;
+}
+
+.left {
+    position: absolute;
+    width: 600px;
+    border: black 1px 1px;
+}
+
+.right {
+    position: absolute;
+    left: 620px;
+    width: 600px;
+    border: black 1px 1px;
+}
+
+
+.group-names h2 {
+    color: darkgray;
+}
+
+.home-info {
+    margin-top: 40px;
+}
+
+.home-info h1 {
+    color: #E43F5A;
+}
+
+.home-info ul {
+    margin: 4px 0px 4px 10px;
+    list-style: none;
+}
+
+.home-info li {
+    font-size: 20px;
+}
+
+.message {
+    margin: 30px 0px 12px 44px;
+}
+
+.box {
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.box h1 {
+    font-size: 36px;
+    margin-bottom: 60px;
+    background: #E43F5A;
+    border-radius: 20px;
+    padding: 6px 20px;
+}
+
+.box h1:hover {
+    text-decoration: underline;
+}
