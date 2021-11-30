@@ -4,7 +4,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
 
-
+ 
 @WebServlet(
         name = "login",
         urlPatterns = "/login"
@@ -31,22 +31,26 @@ public class LoginServlet extends HttpServlet {
 
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
-
+        User currentUser = null;
        
         try {
             Integer userID = Query.userByUsername(userName);
-            User currentUser = Query.userByUserID(userID);
+            currentUser = Query.userByUserID(userID);
 
             if (currentUser.getPassword().equals(password))
             {
-                // TODO: login user in 
+                // hopefully redirects
+                request.setAttribute("userID", "newUserID");
+                request.getRequestDispatcher("UserPage.jsp").forward(request, response);
             }
             
             else
             {
-                // TODO: decline login attempt
-                // message: incorrect login
+                response.setContentType("text/html");
+                PrintWriter printWriter = response.getWriter().println("<h1>Invalid Login Attemp!</h1>");
+                response.sendRedirect("Login.jsp")
             }
+
 
         } catch (UserNotFound e){
             e.printStackTrace;
