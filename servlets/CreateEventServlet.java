@@ -41,7 +41,12 @@ public class CreateEventServlet extends HttpServlet {
         newEvent.setTimeEnd(request.getParameter("timeEnd"));
 
         try {
-            Query.addEvent(newEvent);
+            newEvent = Query.createEvent(newEvent);
+
+            Integer newEventID = newEvent.getEventId();
+            // hopefully routes
+            request.setAttribute("eventID","newEventID");
+            request.getRequestDispatcher("EventPage.jsp").forward(request, response);
         } catch (UserNotFound e){
             response.setContentType("text/html");
             PrintWriter printWriter = response.getWriter().println("<h1>Event not found!</h1>");

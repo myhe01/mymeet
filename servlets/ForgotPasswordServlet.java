@@ -37,6 +37,7 @@ public class ForgotPasswordServlet extends HttpServlet {
             currentUser.password = request.getParameter("password");
             
             Query.updateUser(currentUser);
+            // TODO: Insert pyscript
         }
         catch (Exception e)
         {

@@ -33,7 +33,10 @@ public class SearchEventServlet extends HttpServlet {
         Event searchedEvent = null;
         try {
             searchedEvent = Query.eventByEventID(eventID);
-            // redirect to page of event.
+            // redirect to page of event
+
+            request.setAttribute("eventID","eventID");
+            request.getRequestDispatcher("EventPage.jsp").forward(request, response);
         } catch (Exception e)
         {
             e.printStackTrace();

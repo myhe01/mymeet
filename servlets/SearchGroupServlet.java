@@ -31,10 +31,14 @@ public class SearchGroupServlet extends HttpServlet {
         
         String groupName = request.getParameter("groupName");
         Integer groupID = request.getParameter("groupID");
-        
+        Group searchedGroupID = null;
         try {
-            Group searchedGroupID = Query.groupByGroupID(groupID);
+            searchedGroupID = Query.groupByGroupID(groupID);
             Integer searchedGroupNameID = Query.groupByGroupName(groupName);
+            
+            // hopefully redirects
+            request.setAttribute("groupID","groupID");
+            request.getRequestDispatcher("GroupPage.jsp").forward(request, response);
 
         } catch (Exception e)
         {
